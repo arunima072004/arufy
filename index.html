@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png"/>
+    <title>arufy</title>
+</head>
+
+<body>
+    
+<header>
+    <div class="menu_side">
+        <h1><i class="fab fa-spotify"></i> arufy</h1>
+        <div class="playlist">
+            <h4 class="active">My Library</h4>
+            <h4><i class="fas fa-heart"></i> Liked Songs</h4>
+            <h4><i class="fas fa-history"></i> Recently Played</h4>
+            <h4><i class="fas fa-star"></i> Recommended</h4>
+            <button class="create-playlist-btn"><i class="fas fa-plus"></i> Create Playlist</button>
+        </div>
+        <div class="menu_song">
+            <h4>My Library</h4>
+        </div>
+    </div>
+
+
+    <div class="song_side">
+        <nav>
+            <ul>
+                <li><i class="fas fa-search"></i> Search<span></span></li>
+                <li><i class="fas fa-book"></i> My Library</li>
+                <li><i class="fas fa-broadcast-tower"></i> Radio</li>
+            </ul>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Music...">
+            </div>
+            <div class="user">
+                <i class="fas fa-user"></i>
+                <span>User</span>
+            </div>
+        </nav>
+        <!-- Add Back Button -->
+        <div class="back-button-container">
+            <button class="back-button" id="backButton" style="display: none;">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+        </div>
+        <!-- Add Profile Page -->
+        <div class="profile-page" id="profilePage" style="display: none;">
+            <div class="profile-content">
+                <div class="profile-header">
+                    <img src="https://i.scdn.co/image/ab67616d0000485133b8541201f1ef38941024be" alt="Profile" class="profile-image">
+                    <h2 class="profile-name">User Profile</h2>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Playlists</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Liked Songs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Recently Played</span>
+                    </div>
+                </div>
+                <div class="profile-playlists">
+                    <h3>Your Playlists</h3>
+                    <div class="playlist-list">
+                        <!-- Playlists will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Login/Signup Modal -->
+        <div class="auth-modal" id="authModal">
+            <div class="auth-content">
+                <span class="close-modal">&times;</span>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+                <div class="auth-form" id="loginForm">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </div>
+                <div class="auth-form" id="signupForm" style="display: none;">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="content">
+            <h1>Taylor Swift - Midnights</h1>
+            <p>
+                Its me hii, im the problem its me....
+                <br>
+                Listen to Midnights, the album that broke the internet.
+            </p>
+            <div class="buttons">
+                <button>PLAY</button>
+            </div>
+        </div>
+        
+        <div class="popular_song">
+            <div class="h4">
+                <h4>Popular Songs</h4>
+                <div class="btn_s">
+                    <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                    <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+                </div>
+            </div>
+            <div class="pop_song">
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="7"></i>
+                        <img src="https://i.scdn.co/image/ab67616d0000485133b8541201f1ef38941024be" alt="Example Image">
+                    </div>
+                    <h5>Tolerate It
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="8"></i>
+                        <img src="https://i.scdn.co/image/ab67616d0000485152b2a3824413eefe9e33817a" alt="Example Image">
+                    </div>
+                    <h5>Style
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="9"></i>
+                        <img src="https://i.scdn.co/image/ab67616d0000485152b2a3824413eefe9e33817a" alt="Example Image">
+                    </div>
+                    <h5>Wildest Dreams
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="10"></i>
+                        <img src="https://i.scdn.co/image/ab67616d0000485195f754318336a07e85ec59bc" alt="Example Image">
+                    </div>
+                    <h5>Cardigan
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="11"></i>
+                        <img src="https://i.scdn.co/image/ab67616d0000485133b8541201f1ef38941024be" alt="Example Image">
+
+                    </div>
+                    <h5>Willow
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="12"></i>
+                        <img src="	https://i.scdn.co/image/ab67616d00004851bb54dde68cd23e2a268ae0f5" alt="Example Image">
+
+                    </div>
+                    <h5>Karma
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="13"></i>
+                        <img src="	https://i.scdn.co/image/ab67616d00004851318443aab3531a0558e79a4d" alt="Example Image">
+
+                    </div>
+                    <h5>All Too Well
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="14"></i>
+                        <img src="https://i.scdn.co/image/ab67616d00004851a48964b5d9a3d6968ae3e0de" alt="Example Image">
+
+                    </div>
+                    <h5>You Belong With Me
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <i class="bi playListPlay bi-play-circle-fill" id="15"></i>
+                        <img src="https://i.scdn.co/image/ab67616d00004851b7e976d2b35c767f9012cb72" alt="Example Image">
+
+                    </div>
+                    <h5>Bad Blood
+                        <br>
+                        <div class="subtitle">Taylor Swift</div>
+                    </h5>
+                </li>
+            </div>
+        </div>
+        <div class="popular_artists">
+            <div class="h4">
+                <h4>Popular Artists</h4>
+                <div class="btn_s">
+                    <i id="left_scrolls" class="bi bi-arrow-left-short"></i>
+                    <i id="right_scrolls" class="bi bi-arrow-right-short"></i>
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    
+                    <li data-artist="taylor-swift">Taylor Swift</li>
+                </div>
+                
+                <li data-artist="billie-eilish">Billie Eilish</li>
+                <li data-artist="chainsmokers">The Chainsmokers</li>
+                <li data-artist="arjit-singh">Arijit Singh</li>
+                <li data-artist="ed-sheeran">Ed Sheeran</li>
+                <li data-artist="post-malone">Post Malone</li>
+                <li data-artist="dua-lipa">Dua Lipa</li>
+                <li data-artist="shawn-mendes">Shawn Mendes</li>
+                <li data-artist="charlie-puth">Charlie Puth</li>
+                <li data-artist="maroon-5">Maroon 5</li>
+                <li data-artist="imagine-dragons">Imagine Dragons</li>
+            </div>
+        </div>
+
+        <!-- Artist Profile Containers -->
+        <div class="artist-profile" id="taylor-swift">
+            
+            <div class="content">
+                <!-- artists.html -->
+<a href="index.html" class="back-button">Back</a>
+                <h1>Taylor Swift</h1>
+                <p>American singer-songwriter who has become one of the most successful and influential artists of her generation.</p>
+                <div class="buttons">
+                    <button>Play</button>
+                </div>
+            </div>
+            <div class="artist-songs">
+                <h4>Popular Songs</h4>
+                <div class="song-list">
+                    <li class="songItem">
+                        <span>01</span>
+                        <h5>Anti-Hero
+                            <div class="subtitle">Taylor Swift</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>02</span>
+                        <h5>Shake It Off
+                            <div class="subtitle">Taylor Swift</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>03</span>
+                        <h5>Love Story
+                            <div class="subtitle">Taylor Swift</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>04</span>
+                        <h5>Blank Space
+                            <div class="subtitle">Taylor Swift</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>05</span>
+                        <h5>Bad Blood
+                            <div class="subtitle">Taylor Swift</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                </div>
+            </div>
+            <div class="artist-profile">
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                    <div class="search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="user">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="artist-profile" id="billie-eilish">
+            <div class="content">
+                <!-- artists.html -->
+<a href="index.html" class="back-button">Back</a>
+                <h1>Billie Eilish</h1>
+                <p>American singer-songwriter known for her distinctive voice and dark pop sound.</p>
+                <div class="buttons">
+                    <button>PLAY</button>
+                </div>
+            </div>
+            <div class="artist-songs">
+                <h4>Popular Songs</h4>
+                <div class="song-list">
+                    <li class="songItem">
+                        <span>01</span>
+                        <h5>Bad Guy
+                            <div class="subtitle">Billie Eilish</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>02</span>
+                        <h5>Everything I Wanted
+                            <div class="subtitle">Billie Eilish</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>03</span>
+                        <h5>Therefore I Am
+                            <div class="subtitle">Billie Eilish</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>04</span>
+                        <h5>My Future
+                            <div class="subtitle">Billie Eilish</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>05</span>
+                        <h5>Ocean Eyes
+                            <div class="subtitle">Billie Eilish</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                </div>
+            </div>
+            <div class="artist-profile">
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                    <div class="search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="user">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="artist-profile" id="chainsmokers">
+            <div class="content">
+                <!-- artists.html -->
+<a href="index.html" class="back-button">Back</a>
+                <h1>The Chainsmokers</h1>
+                <p>American DJ and production duo known for their electronic dance music and pop collaborations.</p>
+                <div class="buttons">
+                    <button>PLAY</button>
+                </div>
+            </div>
+            <div class="artist-songs">
+                <h4>Popular Songs</h4>
+                <div class="song-list">
+                    <li class="songItem">
+                        <span>01</span>
+                        <h5>Closer
+                            <div class="subtitle">The Chainsmokers</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>02</span>
+                        <h5>Something Just Like This
+                            <div class="subtitle">The Chainsmokers</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>03</span>
+                        <h5>Don't Let Me Down
+                            <div class="subtitle">The Chainsmokers</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>04</span>
+                        <h5>Paris
+                            <div class="subtitle">The Chainsmokers</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                    <li class="songItem">
+                        <span>05</span>
+                        <h5>Roses
+                            <div class="subtitle">The Chainsmokers</div>
+                        </h5>
+                        <i class="fas fa-heart like-btn"></i>
+                        <i class="bi playListPlay bi-play-circle-fill"></i>
+                    </li>
+                </div>
+            </div>
+            <div class="artist-profile">
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                    <div class="search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="user">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="master_play">
+        <div class="wave">
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+        </div>
+        <img src="https://i.scdn.co/image/ab67616d0000485133b8541201f1ef38941024be" alt="Alan" id="poster_master_play">
+        <h5 id="title">tolerate it<br>
+            <div class="subtitle">Taylor Swift</div>
+        </h5>
+        <div class="icon">
+            <i class="fas fa-step-backward" id="back"></i>
+            <i class="fas fa-play" id="masterPlay"></i>
+            <i class="fas fa-step-forward" id="next"></i>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+            <input type="range" id="seek" min="0" value="0" max="100">
+            <div class="bar2" id="bar2"></div>
+            <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:00</span>
+
+        <div class="vol">
+            <i class="fas fa-volume-down" id="vol_icon"></i>
+            <input type="range" id="vol" min="0" value="30" max="100">
+            <div class="vol_bar"></div>
+            <div class="dot" id="vol_dot"></div>
+        </div>
+    </div>
+</header>
+<script src="script.js"></script>
+</body>
+
+</html>
